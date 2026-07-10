@@ -34,7 +34,14 @@ document.querySelector(".reset").addEventListener('click',() =>{
 let eraser = document.querySelector(".eraser");
 eraser.addEventListener('click',()=>{
   currentColor = "white";
+});
+
+let colorpicker = document.querySelector(".color-picker");
+colorpicker.addEventListener('input', ()=>{
+    currentColor = colorpicker.value;
 })
+
+
 
 
 
