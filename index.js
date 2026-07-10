@@ -1,11 +1,10 @@
 const container = document.querySelector(".grid-container");
-let n;
-
-
-
+let n ;
+createGrid();
 function createGrid() {
   
-  n = Number(document.querySelector("input").value);
+  n = Number(document.querySelector("input").value) ;
+ 
   if(n === 0 || n > 100)return ;
   container.innerHTML = '';
   container.style.gridTemplateColumns = `repeat(${n},1fr)`;
