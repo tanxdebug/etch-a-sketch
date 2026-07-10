@@ -1,5 +1,6 @@
 const container = document.querySelector(".grid-container");
 let n ;
+let mode = "pen";
 createGrid();
 let currentColor = "black";
 function createGrid() {
@@ -15,7 +16,13 @@ function createGrid() {
   square.classList.add("grid-item");
   container.appendChild(square);
   square.addEventListener('mouseover',() => {
-      square.style.backgroundColor = currentColor;
+      if(mode === "rainbow"){
+        square.style.backgroundColor = random();
+      } else if(mode === "eraser"){
+        square.style.backgroundColor = "white";
+      } else {
+        square.style.backgroundColor = currentColor;
+      }
   });
 }
 }
@@ -33,23 +40,36 @@ document.querySelector(".reset").addEventListener('click',() =>{
 
 let eraser = document.querySelector(".eraser");
 eraser.addEventListener('click',()=>{
-  currentColor = "white";
+  mode = "eraser"
 });
 
 let colorpicker = document.querySelector(".color-picker");
 colorpicker.addEventListener('input', ()=>{
+   mode = "pen";
     currentColor = colorpicker.value;
 })
 
 let randomcolor = document.querySelector(".random");
 
-randomcolor.addEventListener('click',random);
+randomcolor.addEventListener('click',()=>{
+  mode = "pen";
+  currentColor = random();
+});
 
 function random(){
   let r = Math.floor(Math.random()*256+1);
    let b = Math.floor(Math.random()*256+1);
     let g = Math.floor(Math.random()*256+1);
-    currentColor = `rgb(${r},${g},${b})`;
+    
+    return `rgb(${r},${g},${b})`;
+   
 
 }
+
+let rainbowcolor = document.querySelector(".rainbow");
+
+rainbowcolor.addEventListener('click',()=>{
+  mode = "rainbow";
+});
+
 
