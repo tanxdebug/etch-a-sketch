@@ -20,3 +20,10 @@ function createGrid() {
 }
 
 document.querySelector(".generate-grid").addEventListener('click',createGrid);
+
+document.querySelector(".reset").addEventListener('click',() =>{
+   document.querySelectorAll(".grid-item").forEach((square)=>{
+       square.style.backgroundColor = "white";
+       
+   })
+});
