@@ -1,10 +1,23 @@
 const container = document.querySelector(".grid-container");
+let n;
 
-for(let i = 0;i < 256;i++){
+
+
+function createGrid() {
+  
+  n = Number(document.querySelector("input").value);
+  if(n === 0 || n > 100)return ;
+  container.innerHTML = '';
+  container.style.gridTemplateColumns = `repeat(${n},1fr)`;
+  
+  for(let i = 0;i < n*n;i++){
   let square = document.createElement('div');
-  square. classList.add("grid-item");
+  square.classList.add("grid-item");
   container.appendChild(square);
-  document.querySelector(".grid-item").addEventListener('mouseover',() => {
+  square.addEventListener('mouseover',() => {
       square.style.backgroundColor = "black";
   });
 }
+}
+
+document.querySelector(".generate-grid").addEventListener('click',createGrid);
