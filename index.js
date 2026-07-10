@@ -41,7 +41,15 @@ colorpicker.addEventListener('input', ()=>{
     currentColor = colorpicker.value;
 })
 
+let randomcolor = document.querySelector(".random");
 
+randomcolor.addEventListener('click',random);
 
+function random(){
+  let r = Math.floor(Math.random()*256+1);
+   let b = Math.floor(Math.random()*256+1);
+    let g = Math.floor(Math.random()*256+1);
+    currentColor = `rgb(${r},${g},${b})`;
 
+}
 
