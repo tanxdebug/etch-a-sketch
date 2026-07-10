@@ -10,18 +10,36 @@
   <link href = "style.css" rel = "stylesheet"/>
 </head>
 <body>
+  <div class = "all">
+   <div>
+    <h1>Etch-A-Sketch</h1>
+    <p class="instructions">
+      Enter a grid size (1–100), then click "Generate" to build the grid — 
+      it only updates when you click the button, not as you type. 
+      Hover over squares to draw, and use the buttons below to switch colors or modes.
+      </p>
+ <div class = "btns">
+        <label for="grid-size">Enter Grid Size:</label>
+        <input type="number" id="grid-size" name="grid-size" value = "16" min="1" max="100" placeholder="16" class ="grid-size">
+        <button class = "generate-grid">Create Grid</button>
+        <button class = "reset">Reset</button>
+        <button class = "eraser">Eraser</button>
+        <button>Choose A Color
+             <input type="color" class="color-picker" value="#000000">
+        </button>
+       
+        <button class = "random">Random color</button>
+        <button class = "rainbow">Rainbow color</button>
+    </div>
+  </div> 
 
-  <div class = "grid-container">
+ 
+   
+<div class = "grid-container">
 
     </div>
-  <label for="age">Enter Grid Size:</label>
-  <input type="number" id="age" name="grid-size" value = "16" min="1" max="100" placeholder="16">
-  <button class = "generate-grid">Create Grid</button>
-  <button class = "reset">Reset</button>
-  <button class = "eraser">Eraser</button>
-   <input type="color" class="color-picker" value="#000000">
-   <button class = "random">Random color</button>
-   <button class = "rainbow">Rainbow color</button>
+  </div>
+  
   <script src = "index.js"></script>
 </body>
 </html>
