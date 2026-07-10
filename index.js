@@ -1,6 +1,7 @@
 const container = document.querySelector(".grid-container");
 let n ;
 createGrid();
+let currentColor = "black";
 function createGrid() {
   
   n = Number(document.querySelector("input").value) ;
@@ -14,7 +15,7 @@ function createGrid() {
   square.classList.add("grid-item");
   container.appendChild(square);
   square.addEventListener('mouseover',() => {
-      square.style.backgroundColor = "black";
+      square.style.backgroundColor = currentColor;
   });
 }
 }
@@ -27,3 +28,13 @@ document.querySelector(".reset").addEventListener('click',() =>{
        
    })
 });
+
+
+
+let eraser = document.querySelector(".eraser");
+eraser.addEventListener('click',()=>{
+  currentColor = "white";
+})
+
+
+
