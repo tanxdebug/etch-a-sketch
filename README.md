@@ -19,7 +19,7 @@ A browser-based drawing grid built with vanilla HTML, CSS, and JavaScript, inspi
 5. Click "Reset" anytime to clear the grid back to white.
 
 ## Live Demo
-https://tanxdebug.github.io/etch-a-sketch/
+https://mvstanusri.github.io/etch-a-sketch/
 
 ## Built With
 - HTML
